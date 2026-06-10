@@ -1,0 +1,121 @@
+﻿.body {
+    position: fixed;
+    top: 70px;
+    left: calc(50% - 45vmin);
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.board {
+    background: linear-gradient( 45deg, #1e5631 25%, #2e8b57 25%, #2e8b57 50%, #1e5631 50%, #1e5631 75%, #2e8b57 75% );
+    height: 90vmin;
+    width: 90vmin;
+    margin: auto;
+    border: 6px solid #2c3e50;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4), 0 0 40px rgba(46,139,87,0.4);
+    background-size: 40px 40px;
+    overflow: hidden;
+}
+.food {
+    background-image: url('/images/apple.png');
+    background-size: cover;
+    border-radius: 50%;
+    background-position: center;
+    animation: fruitPulse 1s infinite alternate, fruitRotate 3s linear infinite;
+    filter: drop-shadow(0 0 10px red);
+}
+
+@keyframes fruitPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+
+
+.sneck {
+    background: #32CD32;
+    border-radius: 50%;
+    border: 1px solid #145214;
+}
+
+.head {
+    background: #2f6b1f;
+    border: 2px solid #1a3d11;
+    border-radius: 50% 50% 40% 40%;
+    position: relative;
+}
+
+    .head::before,
+    .head::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: black;
+        border-radius: 50%;
+        top: 25%;
+    }
+
+    .head::before {
+        left: 20%;
+    }
+
+    .head::after {
+        right: 20%;
+    }
+
+h2 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+.game-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66, 0 0 40px #00ff66;
+}
+
+.score-panel {
+    position:relative;
+    top:8px;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
